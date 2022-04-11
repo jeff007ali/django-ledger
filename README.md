@@ -11,6 +11,8 @@
 ***
 > Postman collection is available in Repo for testing
 
+APIs are live at `http://94.130.227.241:8000/`
+
 1. `/api/login` :  It accepts username and password and returns true if exists
 2. `/api/get_transactions` : fetches all the transactions for the user (he can be either borrower or lender).
 3. `/api/add_transaction` :  it accepts { user_id, transaction_id (random hash), transaction_type (borrow/lend), transaction_amount (negative, positive), transaction_date, transaction_status (paid/unpaid), transaction_with (user_id) }
