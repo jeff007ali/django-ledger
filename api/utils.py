@@ -103,6 +103,9 @@ class UsersUtility:
 
         logger.info(
             "UsersUtility - GetCreditScore - CalculateBorrowScore - BorrowSum - {}".format(borrow_sum))
+        if not borrow_sum:
+            borrow_sum = 0
+
         if borrow_sum in range(0, 101):
             return 100
         elif borrow_sum in range(101, 201):
@@ -125,14 +128,15 @@ class UsersUtility:
             return 10
         elif borrow_sum >= 1001:
             return 0
-        else:
-            return 100
 
     def calculate_lend_score(self, lend_sum: float):
         '''According total lending amount it returns lending score'''
 
         logger.info(
             "UsersUtility - GetCreditScore - CalculateLendScore - LendSum - {}".format(lend_sum))
+        if not lend_sum:
+            lend_sum = 0
+
         if lend_sum in range(0, 1001):
             return 0
         elif lend_sum in range(1001, 1101):
@@ -157,8 +161,6 @@ class UsersUtility:
             return 100
         elif lend_sum >= 2001:
             return 100
-        else:
-            return 0
 
 
 class TransactionUtility:
