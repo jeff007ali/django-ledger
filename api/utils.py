@@ -153,7 +153,7 @@ class UsersUtility:
             return 90
         elif lend_sum in range(1901, 2001):
             return 100
-        else lend_sum >= 2001
+        elif lend_sum >= 2001
             return 100
 
 
