@@ -6,7 +6,7 @@ from django.core.cache import cache
 import logging
 logger = logging.getLogger(__name__)
 
-CACHE_TTL = 30
+CACHE_TTL = 60
 
 
 class UsersUtility:
@@ -123,7 +123,7 @@ class UsersUtility:
             return 20
         elif borrow_sum in range(901, 1001):
             return 10
-        else:
+        elif borrow_sum >= 1001:
             return 0
 
     def calculate_lend_score(self, lend_sum: float):
@@ -153,7 +153,7 @@ class UsersUtility:
             return 90
         elif lend_sum in range(1901, 2001):
             return 100
-        else:
+        else lend_sum >= 2001
             return 100
 
 
@@ -280,6 +280,11 @@ class TransactionUtility:
             logger.error(
                 "TransactionUtility - AddTransaction - ERROR - Transaction status is blank")
             return {"message": "Please provide transaction status", "code": 400}
+        if amount <= 0:
+            logger.error(
+                "TransactionUtility - AddTransaction - ERROR - Transaction amount is negative/zero")
+            return {"message": "Please provide postive non-zero transaction amount", "code": 400}
+
 
         try:
             transaction_from_user = Users.objects.get(id=transaction_from)
