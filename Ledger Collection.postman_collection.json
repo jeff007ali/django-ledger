@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "c67ed668-a619-4fae-ac48-8b9aafa0133d",
+		"name": "Ledger Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"john\",\n    \"password\":\"john\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://94.130.227.241:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"94",
+						"130",
+						"227",
+						"241"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transactions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\":\"9ebf8dbe-bc34-48a6-94e4-6dac76be5a62\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://94.130.227.241:8000/api/get_transactions",
+					"protocol": "http",
+					"host": [
+						"94",
+						"130",
+						"227",
+						"241"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"get_transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"transaction_from\":\"9ebf8dbe-bc34-48a6-94e4-6dac76be5a62\",\n    \"transaction_with\":\"15d69a96-4de7-48d1-b8f0-7d88ea80fac2\",\n    \"transaction_amount\":786.0,\n    \"transaction_type\":\"borrow\",\n    \"transaction_status\":\"unpaid\",\n    \"transaction_date\":\"2022-04-10\",\n    \"reason\":\"travel\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://94.130.227.241:8000/api/add_transaction",
+					"protocol": "http",
+					"host": [
+						"94",
+						"130",
+						"227",
+						"241"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"add_transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark Transaction Paid",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"transaction_id\":\"de543dde-dea6-4fc5-959e-698feaa431a8\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://94.130.227.241:8000/api/mark_paid",
+					"protocol": "http",
+					"host": [
+						"94",
+						"130",
+						"227",
+						"241"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"mark_paid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Credit Score",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\":\"9ebf8dbe-bc34-48a6-94e4-6dac76be5a62\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://94.130.227.241:8000/api/credit_score",
+					"protocol": "http",
+					"host": [
+						"94",
+						"130",
+						"227",
+						"241"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"credit_score"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
