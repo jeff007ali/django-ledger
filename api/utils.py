@@ -125,6 +125,8 @@ class UsersUtility:
             return 10
         elif borrow_sum >= 1001:
             return 0
+        else:
+            return 100
 
     def calculate_lend_score(self, lend_sum: float):
         '''According total lending amount it returns lending score'''
@@ -155,6 +157,8 @@ class UsersUtility:
             return 100
         elif lend_sum >= 2001:
             return 100
+        else:
+            return 0
 
 
 class TransactionUtility:
