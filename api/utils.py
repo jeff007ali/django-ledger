@@ -290,6 +290,10 @@ class TransactionUtility:
             logger.error(
                 "TransactionUtility - AddTransaction - ERROR - Transaction amount is negative/zero")
             return {"message": "Please provide postive non-zero transaction amount", "code": 400}
+        if transaction_from == transaction_with:
+            logger.error(
+                "TransactionUtility - AddTransaction - ERROR - Transaction from user and transaction with user are same")
+            return {"message": "The transaction can not be placed between the same users", "code": 400}
 
 
         try:
