@@ -11,7 +11,7 @@
 ***
 > Postman collection is available in Repo for testing
 
-APIs are live at `http://94.130.227.241:8000/`
+APIs ~~are~~ were live at `http://0.0.0.0:8000/`
 
 1. `/api/login` :  It accepts username and password and returns true if exists
 2. `/api/get_transactions` : fetches all the transactions for the user (he can be either borrower or lender).
